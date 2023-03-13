@@ -1,0 +1,359 @@
+/*Price-section*/
+@use 'vars';
+
+.section-prices {
+  padding-top: 39px;
+  padding-bottom: 108px;
+  background-color: vars.$white-bg;
+}
+
+.prices-container{
+  display: flex;
+  justify-content: space-between;
+}
+
+.price-cards-wrap {
+  width: 332px;
+}
+
+.price-title {
+  font-weight: 700;
+  font-size: 40px;
+  line-height: 48px;
+  color: vars.$logo-text-color;
+  margin-bottom: 60px;
+}
+
+.price-list {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+  border: 1px solid vars.$card-border-color;
+  border-radius: 20px;
+  padding: 33px 40px;
+}
+
+.price-item{
+  width: 250px;
+  height: 50px;
+
+  &.price-open {
+    height: 164px;
+    background: vars.$price-card-bg;
+    border-radius: 20px;
+
+    >.price-button {
+      background: transparent;
+      border: none;
+
+      >.price-button-drop {
+        background: vars.$price-line-color;
+
+        > .arrow-down {
+          width: 0;
+          height: 0;
+          stroke: none;
+        }
+
+        > .arrow-up {
+          width: 6px;
+          height: 4px;
+          stroke: vars.$white-bg;
+        }
+      }
+    }
+
+    >.price-card {
+      display: block;
+      margin-left: 40px;
+      margin-right: 46px;
+      padding-top: 6px;
+      border-top: 0.5px solid vars.$price-line-color;
+    }
+  }
+}
+
+.price-button {
+  width: 250px;
+  height: 50px;
+  background: vars.$main-bg;
+  border: transparent solid 1px;
+  border-radius: 20px;
+  transition: all 0.5s ease-out;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px 39px 17px 40px;
+
+  &:hover {
+    background: vars.$select-active-bg;
+    border: 1px solid vars.$price-card-bg;
+    transition: all 0.5s ease-out;
+  }
+}
+
+.price-button-text {
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 21px;
+  margin-top: 3px;
+  color: vars.$logo-text-color;
+}
+
+.price-button-drop {
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  background: vars.$drop-btn-bg;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.arrow-down {
+  width: 6px;
+  height: 4px;
+  stroke: vars.$title-grey-color;
+}
+
+.arrow-up {
+  width: 0;
+  height: 0;
+  stroke: none;
+}
+
+.price-card {
+  display: none;
+}
+
+.price-card-text {
+  font-weight: 300;
+  font-size: 10px;
+  line-height: 10px;
+  color: vars.$title-grey-color;
+  margin-bottom: 6px;
+}
+
+.price-count {
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 20px;
+  margin-bottom: 12px;
+  color: vars.$logo-text-color;
+}
+
+.price-currency{
+  font-weight: 700;
+}
+
+.price-num {
+  font-weight: 700;
+  font-size: 16px;
+}
+
+.price-card-button {
+  width: 86px;
+  height: 25px;
+  border: none;
+  background: vars.$white-bg;
+  border-radius: 10px;
+  transition: all 0.5s ease-out;
+
+  a{
+    color: vars.$title-grey-color;
+    display: inline-block;
+    width: 100%;
+    height: 100%;
+    border-radius: 10px;
+    padding-top: 4px;
+  }
+
+  &:hover {
+    background: vars.$orange-color;
+    transition: all 0.5s ease-out;
+
+    >a{
+      color: vars.$white-bg;
+    }
+  }
+}
+
+.price-sidebar-wrap {
+  width: 452px;
+  text-align: right;
+  overflow: hidden;
+
+  img{
+    display: block;
+    margin-left: 295px;
+    width: 166px;
+    height: 189px;
+  }
+}
+
+.price-sidebar-title {
+  font-weight: 700;
+  font-size: 40px;
+  line-height: 50px;
+  color: vars.$logo-text-color;
+  margin-bottom: 40px;
+}
+
+.price-sidebar-button {
+  width: 162px;
+  height: 50px;
+  border: 1px solid vars.$orange-color;
+  border-radius: 5px;
+  background: transparent;
+  transition: all 0.5s ease-out;
+  font-family: vars.$nav-font-family;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 26px;
+  text-align: center;
+  color: vars.$orange-color;
+  margin-bottom: 33px;
+  padding-right: 3px;
+
+  &:hover {
+    background: vars.$orange-color;
+    color: vars.$white-bg;
+    transition: all 0.5s ease-out;
+  }
+}
+
+@media screen and (max-width: 1220px){
+  .section-prices {
+    padding-bottom: 81px;
+  }
+
+  .price-cards-wrap{
+    width: 333px;
+  }
+
+  .price-title {
+    font-size: 36px;
+    line-height: 42px;
+    margin-left:2px;
+    margin-bottom: 57px;
+  }
+  .price-list{
+    margin-left: 1px;
+    padding-right: 42px;
+  }
+
+  .price-button{
+    padding-left: 39px;
+    padding-top: 16px;
+    padding-bottom: 16px;
+  }
+
+  .price-sidebar-wrap{
+
+    img{
+      width: 166px;
+      height: auto;
+      margin-left: 179px;
+    }
+  }
+
+  .price-sidebar-button{
+    margin-bottom: 29px;
+  }
+
+  .price-sidebar-title{
+    margin-top: 101px;
+    font-size: 25px;
+    line-height: 35px;
+    margin-bottom: 28px;
+    margin-right: 2px;
+  }
+}
+
+@media screen and (max-width: 750px){
+  .prices-container{
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  .price-title{
+    margin: 0 auto;
+    margin-bottom: 40px;
+    text-align: center;
+  }
+  .price-list{
+    margin-left: 0;
+    margin-bottom: 19px;
+  }
+  .price-sidebar-wrap{
+    align-items: center;
+    text-align: center;
+
+    img{
+      display: none;
+    }
+  }
+
+  .price-sidebar-title{
+    margin-right: 0;
+    margin-top: 0;
+  }
+}
+
+@media screen and (max-width: 550px){
+  .section-prices{
+    padding-top: 25px;
+    padding-bottom: 40px;
+  }
+  .price-title{
+    font-size: 25px;
+    line-height: 30px;
+    margin-bottom: 38px;
+  }
+  .price-cards-wrap{
+    width: 224px;
+  }
+  .price-list{
+    padding: 27px 22px;
+    gap: 14px;
+    margin-bottom: 0;
+  }
+  .price-item{
+    width: 180px;
+
+      &.price-open {
+        height: 180px;
+
+        .price-card{
+          margin-left: 29px;
+        }
+      }
+  }
+  .price-button{
+    width: 180px;
+    height: 50px;
+    padding-left: 29px;
+    padding-top: 20px;
+  }
+  .price-button-text{
+    font-size: 15px;
+    line-height: 20px;
+  }
+  .price-sidebar-wrap{
+    width: 240px;
+  }
+  .price-sidebar-title{
+    font-size: 20px;
+    line-height: 35.5px;
+    margin-top: 19px;
+    margin-bottom: 20px;
+  }
+  .price-sidebar-button{
+    width: 121px;
+    height: 35px;
+    font-size: 15px;
+    line-height: 20px;
+    margin-bottom: 0;
+  }
+}
