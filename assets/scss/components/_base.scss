@@ -1,0 +1,161 @@
+@use 'vars';
+
+/* Свойство для контроля переполнения потока.
+Включать для нахождения элементов, которые выходят за ширину страницы
+если появляется горизонтальная прокрутка на странице
+*/
+
+/* * {
+  outline: solid 1px red;
+} */
+
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
+}
+
+*:focus,
+*:active {
+  outline: none;
+}
+
+a:focus,
+*:active {
+  outline: none;
+}
+
+aside,
+nav,
+footer,
+header,
+section {
+  display: block;
+}
+
+html {
+  /*плавная прокрутка по якорям*/
+  scroll-behavior: smooth;
+}
+
+html,
+body {
+  height: 100%;
+}
+
+/*Обнуление стилей*/
+
+body {
+  line-height: 1;
+  margin: 0 auto;
+}
+
+button {
+  cursor: pointer;
+  padding: 0;
+  font-family: inherit;
+}
+
+img {
+  vertical-align: top;
+}
+
+input,
+textarea {
+  font-family: inherit;
+  padding: 0;
+}
+
+input:-internal-autofill-selected {
+  background-color: inherit;
+  color: inherit;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-style: normal;
+  font-weight: normal;
+  margin-top: 0;
+  margin-block-start: 0;
+  margin-block-end: 0;
+}
+
+ul {
+  padding-inline-start: 0;
+  margin-block-start: 0;
+  margin-block-end: 0;
+}
+
+ul li {
+  padding: 0;
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+
+  &:hover,
+  &:visited {
+    text-decoration: none;
+  }
+}
+
+p {
+  margin-block-start: 0;
+  margin-block-end: 0;
+}
+
+/*Basic components*/
+
+body{
+  width: 100%;
+  background: vars.$main-bg;
+  color: vars.$main-text-color;
+  font-family: vars.$font-family;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+}
+
+.container{
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 0 109px;
+}
+
+.icon-svg {
+  display: inline-block;
+  width: 100%
+}
+
+.green-word{
+  color: vars.$green-color;
+}
+
+.red-word{
+  color: vars.$orange-color;
+}
+
+@media screen and (max-width: 1220px){
+  .container{
+    max-width: 768px;
+    padding: 0 50px;
+  }
+}
+
+@media screen and (max-width: 700px){
+  body.not-scroll {
+    overflow: hidden;
+  }
+}
+
+@media screen and (max-width: 500px){
+  .container {
+    padding-right: 25px;
+    padding-left: 25px;
+  }
+}

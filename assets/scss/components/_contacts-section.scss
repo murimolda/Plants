@@ -1,0 +1,330 @@
+/*Contacts-section*/
+@use 'vars';
+
+.section-contacts {
+  display: flex;
+  padding-top: 53px;
+  padding-bottom: 0.01px;
+  img{
+    width: 400px;
+    height: 496.99px;
+    margin-right: 113px;
+  }
+}
+
+.contact-title {
+  font-family: vars.$nav-font-family;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 40px;
+  line-height: 52px;
+  color: vars.$green-color;
+  margin-top: 7px;
+}
+
+.contacts-cards-wrap {
+  position: relative;
+  margin-left: 64px;
+  margin-top: 95px;
+}
+
+.contacts-select{
+  position: relative;
+  width: 450px;
+  height: 50px;
+  background: vars.$price-card-bg;
+  border: 1px solid transparent;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  padding: 5px 17.5px 5px 20px;
+  box-sizing: border-box;
+  border: 1px solid transparent;
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 40px;
+  letter-spacing: 0.05em;
+  color: vars.$title-grey-color;
+  transition: all 0.5s ease-out;
+  margin-left: 4px;
+
+  &:hover{
+    background: vars.$select-active-bg;
+    border: 1px solid vars.$price-card-bg;
+    transition: all 0.5s ease-out;
+
+    ~ .select-icon{
+      background: vars.$select-drop-bg;
+      transition: all 0.5s ease-out;
+    }
+  }
+}
+
+.contacts-select[open]{
+  background: vars.$select-active-bg;
+  border: 1px solid vars.$price-card-bg;
+  box-shadow: none;
+
+  ~ .select-icon{
+    > .select-down{
+      width: 0;
+      height: 0;
+      stroke: none;
+      transition: all 0.5s ease-out;
+    }
+
+    > .select-up{
+      width: 6px;
+      height: 4px;
+      stroke: vars.$white-bg;
+      transition: all 0.5s ease-out;
+    }
+  }
+}
+
+.select-name{
+  display: block;
+}
+
+::-webkit-details-marker{
+  display: none;
+}
+
+.select-icon{
+  position: absolute;
+  right: 34.5px;
+  top: 17px;
+  width: 16px;
+  height: 16px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  background: vars.$price-line-color;
+  transition: all 0.5s ease-out;
+}
+
+.select-down {
+  width: 6px;
+  height: 4px;
+  stroke: vars.$white-bg;
+  transition: all 0.5s ease-out;
+}
+
+.select-up {
+  width: 0;
+  height: 0;
+  stroke: none;
+  transition: all 0.5s ease-out;
+}
+
+.select-option-wrap{
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  background: #DCE9D9;
+  margin-left: -20px;
+  padding: 27px 35px 31px 35px;
+  width: 450px;
+}
+
+.select-option{
+  height: 35px;
+  border-bottom: 1px solid vars.$drop-btn-bg;
+  color: vars.$green-color;
+  font-size: 16px;
+  line-height: 40px;
+  letter-spacing: 0.05em;
+  transition: all 0.5s ease-out;
+
+  &:hover{
+    color: vars.$title-grey-color;
+    border-bottom: 1px solid vars.$title-grey-color;
+    transition: all 0.5s ease-out;
+  }
+}
+
+.contacts-modal {
+  display: none;
+  margin-top: 47px;
+  padding: 17px 76px 32px 33px;
+  border: 1px solid vars.$logo-text-color;
+  border-radius: 20px;
+}
+
+.contacts-modal-open{
+  display: block;
+}
+
+.modal-item {
+  height: 40px;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  font-size: 16px;
+  line-height: 40px;
+  letter-spacing: 0.05em;
+}
+
+.modal-item-label {
+  color: vars.$logo-text-color;
+}
+
+.modal-item-value {
+  width: 204px;
+  margin-left: auto;
+  color: vars.$title-grey-color;
+}
+
+.modal-button {
+  width: 122px;
+  height: 26px;
+  display: block;
+  margin: 0 auto;
+  margin-top: 24px;
+  border: 1px solid vars.$orange-color;
+  border-radius: 5px;
+  font-family: vars.$nav-font-family;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 10px;
+  line-height: 13px;
+  text-align: center;
+  transition: all 0.5s ease-out;
+
+  a{
+    display: inline-block;
+    width: 100%;
+    height: 100%;
+    padding-top: 5px;
+    color: vars.$title-grey-color;
+  }
+
+  &:hover{
+    background: vars.$orange-color;
+    transition: all 0.5s ease-out;
+
+    a{
+      color: vars.$white-bg;
+    }
+  }
+}
+
+@media screen and (max-width: 1439px){
+  .section-contacts {
+    img{
+      margin-right: 9%;
+    }
+  }
+}
+
+@media screen and (max-width: 1430px){
+  .section-contacts {
+    flex-direction: column;
+    align-items: center;
+    img{
+      order: 1;
+      margin: 0 auto;
+      align-self: center;
+    }
+  }
+  .contacts-cards-wrap{
+    margin: 0 auto;
+    margin-top: 100px;
+    margin-bottom: 250px;
+  }
+}
+
+@media screen and (max-width: 1220px){
+  .section-contacts {
+    padding-top: 33px;
+    padding-left: 49px;
+  }
+  .contacts-cards-wrap{
+    margin-top: 99px;
+    margin-left: 105.5px;
+  }
+}
+
+
+@media screen and (max-width: 770px){
+  .section-contacts{
+    img{
+      margin-left: 244.5px;
+      width: 200px;
+      height: 248.49px;
+    }
+  }
+}
+
+@media screen and (max-width: 760px){
+  .section-contacts {
+    img{
+      margin: 0 auto;
+    }
+  }
+
+  .contacts-cards-wrap{
+    margin: 0 auto;
+    margin-top: 99px;
+    margin-bottom: 250px;
+  }
+}
+
+@media screen and (max-width: 550px){
+  .section-contacts{
+    padding-top: 25px;
+
+    img{
+      width: 100px;
+      height: 124px;
+      margin-left: 88px;
+    }
+  }
+  .contact-title{
+    font-size: 25px;
+    line-height: 33px;
+    margin-bottom: 0;
+    margin-top: 0;
+  }
+  .contacts-cards-wrap{
+    width: 300px;
+    margin-top: 81px;
+    margin-bottom: 132px;
+  }
+  .contacts-select{
+    width: 300px;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 40px;
+    margin-left: 0;
+    padding: 5px 19px 5px 20px;
+  }
+
+  .select-option-wrap{
+    width: 300px;
+  }
+  .select-icon{
+    right: 20px;
+  }
+}
+
+@media screen and (max-width: 370px){
+  .section-contacts{
+    padding-left: 25px;
+  }
+
+  .contacts-cards-wrap{
+    width: 270px;
+    margin: 0 auto;
+    margin-top: 81px;
+    margin-bottom: 132px;
+  }
+  .contacts-select{
+    width: 270px;
+    padding: 5px;
+    padding-left: 20px;
+  }
+
+  .select-option-wrap{
+    width: 270px;
+  }
+}
